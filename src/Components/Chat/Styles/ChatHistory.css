@@ -55,3 +55,13 @@
 .chat-popup-menu button:hover {
   background-color: #f0f0f0;
 }
+
+@media (prefers-color-scheme: light) {
+  .chatHistory-item{
+    color: var(--main-dark);
+  }
+  .chatHistory-item:hover {
+  background-color: white;
+  box-shadow:5px 2px 5px  #85848465;
+}
+}
