@@ -3,9 +3,12 @@ import '../Themes/Theme.css'
 import './Styles/ChatRequest.css'
 const ChatRequest = () => {
   return (
-    <div className='request'>
-        <p> Displays user and bot messages with different styles.</p>
+    <div className="chat-container">
+      <div className="request">
+        <p>This is the left-side bot message. This is the left-side bot message.This is the left-side bot message.</p>
+      </div>
     </div>
+
   )
 }
 

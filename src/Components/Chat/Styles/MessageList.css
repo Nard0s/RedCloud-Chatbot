@@ -15,14 +15,17 @@
 }
 .chat{
     width: 100%;
-    align-self: center;
+    /* align-self: center; */
     display: flex;
     flex-direction: column;
     padding: 0 60px;
 }
-.request{
-    align-self: self-end;
+.request {
+  align-self: flex-end;
+  width: auto;
+  max-width: 60%; 
 }
+
 .response{
     align-self: start;
     width: 80%;

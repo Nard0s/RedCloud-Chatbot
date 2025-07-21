@@ -30,10 +30,8 @@ console.log('Hello World');
 </div>
  
 
- </div>
-      
-     
-    </div>
+ </div>     
+</div>
   )
 }
 
