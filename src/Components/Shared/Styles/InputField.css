@@ -1,0 +1,19 @@
+input {
+    border-radius: 6px;
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  outline: none;
+   color: white;
+  
+}
+@media (prefers-color-scheme: light) {
+  input {
+    color: black;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  input {
+    color: white;
+  }
+}

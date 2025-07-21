@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.continuer{
+    display: flex;
+    /* width:100%; */
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+  
+}
+.chat{
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+}
+.request{
+    align-self: self-end;
+}
+.response{
+    align-self: start;
+    width: 80%;
+}
+.messageInput{
+    position: absolute;
+    justify-content: end;
+    align-self: center;
+    bottom: 20px;
+    z-index: 10;
+}

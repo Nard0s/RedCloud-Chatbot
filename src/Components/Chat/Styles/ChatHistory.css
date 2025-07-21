@@ -1,0 +1,57 @@
+.chatHistory-item {
+  position: relative;
+  /* background-color: #333; */
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  margin: 10px;
+  transition: background 0.2s;
+}
+
+.chatHistory-item:hover {
+  background-color: var( --hover-bg);
+}
+
+.more-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.chatHistory-item:hover .more-icon {
+  display: block;
+}
+
+.chat-popup-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 6px 0;
+  z-index: 100;
+  min-width: 120px;
+}
+
+.chat-popup-menu button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-popup-menu button:hover {
+  background-color: #f0f0f0;
+}

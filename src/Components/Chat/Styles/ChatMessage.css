@@ -1,0 +1,51 @@
+.chat-message {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    color:var( --text-primary);
+    /* background: white; */
+}
+.code-block-container {
+    position: relative;
+    margin-top: 1rem;
+}
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background-color:var( --bg-secondary);
+    color:var( --text-primary);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.copy-btn:hover {
+    background-color: var(--tertiary-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    .chat-message{
+       color:var( --text-primary); 
+    }
+    .copy-btn{
+        background-color:var( --bg-secondary);
+        color:var( --text-primary);  
+    }
+}
+@media (prefers-color-scheme: light) {
+    .chat-message{
+       color:var(--main-dark); 
+    }
+    .copy-btn{
+        background-color:var( --tertiary-light);
+        color:var( --text-primary);  
+    }
+}
