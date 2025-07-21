@@ -25,7 +25,7 @@ const Chat = () => {
 
         <div className="new-chat-btn">
               <FontAwesomeIcon icon={faPenToSquare} style={{ marginRight: '8px' }} />
-              <h3>New Chat</h3> 
+              {/* <h3>New Chat</h3>  */}
         </div>
 
         <hr></hr>
