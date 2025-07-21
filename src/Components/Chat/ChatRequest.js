@@ -1,11 +1,11 @@
 import React from 'react'
 import '../Themes/Theme.css'
 import './Styles/ChatRequest.css'
-const ChatRequest = () => {
+const ChatRequest = ({message}) => {
   return (
     <div className="chat-container">
       <div className="request">
-        <p>This is the left-side bot message. This is the left-side bot message.This is the left-side bot message.</p>
+        <p>{message}</p>
       </div>
     </div>
 
