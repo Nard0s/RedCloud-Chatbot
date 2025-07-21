@@ -4,6 +4,7 @@ import { FaTrash, FaPen } from 'react-icons/fa';
 import '../Themes/Theme.css';
 import './Styles/ChatHistory.css';
 
+
 const ChatHistory = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -12,13 +13,14 @@ const ChatHistory = () => {
       className='chatHistory-item' 
       onMouseLeave={() => setShowMenu(false)}
     >
+      
       <p>which is incorrect</p>
 
       <div 
         className="more-icon" 
         onClick={() => setShowMenu(!showMenu)}
       >
-        <FiMoreHorizontal size={20} color="white" />
+        <FiMoreHorizontal size={20}/>
       </div>
 
       {showMenu && (

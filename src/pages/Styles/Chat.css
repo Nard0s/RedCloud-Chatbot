@@ -17,6 +17,7 @@ html, body {
 
 
 .sidebar {
+  height: 100vh;
   background-color: var(--main-dark);
   z-index: 100;
   flex-basis: 20%;
@@ -29,25 +30,7 @@ html, body {
   z-index: 200;
   
 }
-@media (prefers-color-scheme: light) {
-  .sidebar{
-    background:rgb(254, 253, 253);
-    box-shadow: 5px 5px 5px rgba(156, 155, 155, 0.262);
-    border: 1px solid var( --secondary-light);
-    color: var(--main-dark);
-  }
 
-  hr{
-    background-color:var(--tertiary-light);
-  }
-  .messageInput{
-    background-color:white;
-  }
-  .footer{
-   background-color: white;
-   align-self: center;
-  }
-}
 
 .side-head {
   display: flex;
@@ -133,5 +116,76 @@ hr {
   overflow-x: hidden;
 }
 
+/* /////////////////////////////////////////// */
+
+.sidebar.shrunk {
+  max-width: 80px;
+  min-width: 80px;
+  padding: 10px 5px;
+}
+
+.sidebar.shrunk .side-head h3 {
+  font-size: 14px;
+}
+
+.sidebar.shrunk .new-chat-btn {
+  justify-content: center;
+}
+
+.sidebar.shrunk .new-chat-btn svg {
+  margin-right: 0;
+}
+
+.sidebar.shrunk .new-chat-btn span {
+  display: none;
+}
 
 
+.theme{
+  display: flex;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.switch{
+  /* display: none; */
+}
+.switch.active{
+  display: block;
+}
+/* .........................logout........................... */
+.logout{
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  /* margin-left: 20px; */
+  padding: 8px 12px;
+  background-color: #4a4f5c;
+ 
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  .sidebar{
+    background:rgb(254, 253, 253);
+    box-shadow: 5px 5px 5px rgba(156, 155, 155, 0.262);
+    border: 1px solid var( --secondary-light);
+    color: var(--main-dark);
+  }
+
+  hr{
+    background-color:var(--tertiary-light);
+  }
+  .messageInput{
+    background-color:white;
+  }
+  .footer{
+   background-color: white;
+   align-self: center;
+  }
+  .logout{
+    background-color: rgb(227, 228, 228);
+  }
+}
