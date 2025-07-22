@@ -7,42 +7,27 @@ import InputField from '../Shared/InputField';
 import '../Themes/Theme.css'
 
 
-const MessageInput = () => {
-  const fileInputRef = useRef(null);
-  const[message, setMessage]=useState('')
-
-  const handleIconClick = () => {
-    fileInputRef.current.click(); 
-  };
-
-   const handleSendClick = () => {
-    if (message.trim() !== '') {
-      // onSend(message); 
-      setMessage(''); 
-    }
-  }
-
+const MessageInput = ({handleSendBtnClick, handleOnChange, tempTxt}) => {
   return (
     <div className="message-input">
       
-      <InputField placeholder='Ask Anything' width='100%' value={message} onChange={(e)=>setMessage(e.target.value)}/>
+      <InputField placeholder='Ask Anything' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
 
       <div className="icons">
         {/* Hidden input */}
         <input
           type="file"
-          ref={fileInputRef}
           style={{ display: 'none' }}
-          onChange={(e) => console.log(e.target.files)}
+          onChange={(e)=>console.log(e.target.files)}
         />
 
         {/* Upload + Send Icons */}
         <FontAwesomeIcon
           icon={faPlus}
           className="upload-icon"
-          onClick={handleIconClick}
+          // onClick={handleIconClick}
         />
-        <div  className="send-icon" onClick={handleSendClick}>
+        <div  className="send-icon" onClick={handleSendBtnClick}>
           <FontAwesomeIcon icon={faArrowUp} />
         </div>
       </div>

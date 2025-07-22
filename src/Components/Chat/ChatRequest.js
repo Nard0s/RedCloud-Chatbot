@@ -5,7 +5,7 @@ const ChatRequest = ({message}) => {
   return (
     <div className="chat-container">
       <div className="request">
-        <p>{message}</p>
+        <p>{message.text}</p>
       </div>
     </div>
 

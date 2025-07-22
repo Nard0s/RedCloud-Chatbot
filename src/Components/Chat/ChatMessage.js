@@ -73,7 +73,7 @@ const ChatMessage = ({ message, isUser }) => {
   return (
     <div className={`chat-message ${isUser ? 'user' : 'bot'}`}>
       <ReactMarkdown
-        children={message.content}
+        children={message.text}
         components={{
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');

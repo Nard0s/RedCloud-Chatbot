@@ -1,38 +1,37 @@
-import React from 'react'
-import '../Themes/Theme.css'
-import './Styles/MessageList.css'
-import ChatMessage from './ChatMessage'
-import ChatRequest from './ChatRequest'
-import MessageInput from './MessageInput'
-const MessageList = () => {
+import React from "react";
+import "../Themes/Theme.css";
+import "./Styles/MessageList.css";
+import ChatMessage from "./ChatMessage";
+import ChatRequest from "./ChatRequest";
+
+const MessageList = ({ messages }) => {
   return (
-    <div className='continuer'>
-      <div className='chat'>
-        <div className='request'>
-           <ChatRequest/>
-        </div>
 
-<div className='response'>
-     <ChatMessage
-  message={{
-    role: "assistant",
-    content: `
-  ## Hello!
+    <div className="continuer">
+      <div className="chat">
+        {messages.map((msg, key) => {
+          if (msg.role === "user") {
+            return (
+              <div className="request" key={key} >
+                <ChatRequest message={msg} />
+              </div>
+            );
+          }
 
-This is a test **markdown** message with a code block:
+          if (msg.role === "bot") {
+            return (
+              <div className="response" key={key} >
+                <ChatMessage message={msg} />
+              </div>
+            );
+          }
 
-\`\`\`js
-console.log('Hello World');
-\`\`\`
-    `
-  }}
-/>
-</div>
- 
+          return null;
+        })}
+      </div>
+    </div>
+    
+  );
+};
 
- </div>     
-</div>
-  )
-}
-
-export default MessageList
+export default MessageList;
