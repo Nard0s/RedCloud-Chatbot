@@ -18,7 +18,7 @@ const MessageList = ({ messages }) => {
             );
           }
 
-          if (msg.role === "bot") {
+          if (msg.role === "model") {
             return (
               <div className="response" key={key} >
                 <ChatMessage message={msg} />

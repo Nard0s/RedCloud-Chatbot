@@ -12,6 +12,7 @@ import { FaXmark } from "react-icons/fa6";
 import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
 import { faToggleOff } from "@fortawesome/free-solid-svg-icons";
 import ChatRequest from "../Components/Chat/ChatRequest";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const Chat = () => {
   const [tempTxt, setTempTxt] = useState("");
@@ -21,25 +22,47 @@ const Chat = () => {
     setTempTxt(e.target.value);
   };
 
-  const handleSendBtnClick = () => {
-    const newUserMessage = { role: "user", text: tempTxt };
-    setMessages((prev) => [...prev, newUserMessage]);
+  let history_obj = {
+    history: [
+      {
+        role: "user",
+        parts: [
+          {
+            text: "My name is Pitter, and I want you to treat me like a child. And my gender is boy.",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Ok, Pitter I will call Pitter from know, and I will treat you like a boy child.",
+          },
+        ],
+      },
+    ],
+  };
+
+
+  useEffect(()=>{
+    setMessages(history_obj.history);
+  },[]);
+
+  const ai = new GoogleGenerativeAI("AIzaSyCUnFE_h7VY22QwLwi-it2TUGruE_lGqLM");
+
+  const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
+  const chat = model.startChat(history_obj);
+
+  const handleSendBtnClick = async () => {
+    const result = await chat.sendMessage(tempTxt);
+    const newUserMessage = { role: "user", parts: [{ text: tempTxt }] };
+    const botReply = await result.response.text();
+    const newBotMessage = { role: "model", parts: [{ text: botReply }] };
+
+    history_obj.history = chat.getHistory();
+
+    setMessages((prev) => [...prev, newUserMessage, newBotMessage]);
     setTempTxt("");
-
-    const result = `
-  ## Hello!
-
-This is a test **markdown** message with a code block:
-
-\`\`\`js
-console.log('Hello World');
-\`\`\`
-    `;
-
-    const botReply = result;
-
-    const newBotMessage = { role: "bot", text: botReply };
-    setMessages((prev) => [...prev, newBotMessage]);
   };
 
   return (
