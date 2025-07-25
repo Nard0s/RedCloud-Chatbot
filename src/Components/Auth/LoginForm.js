@@ -1,11 +1,42 @@
-import React from 'react'
+// src/components/LoginForm.jsx
+import React, { useState } from 'react';
+import '../Themes/Theme.css'
+import './Styles/LoginForm.css';
 
 const LoginForm = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-export default LoginForm
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Logging in with:', email, password);
+    // Add your login logic here
+  };
+
+  return (
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2 className="login-title">Log in to <spam>RC-AI</spam> </h2>
+        <input
+          type="email"
+          placeholder="Email"
+          className="login-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="login-input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="login-button">Log In</button>
+      </form>
+    </div>
+  );
+};
+
+export default LoginForm;

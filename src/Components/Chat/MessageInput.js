@@ -11,7 +11,7 @@ const MessageInput = ({handleSendBtnClick, handleOnChange, tempTxt}) => {
   return (
     <div className="message-input">
       
-      <InputField placeholder='Ask Anything' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
+      <InputField placeholder='Ask Anything' type='text' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
 
       <div className="icons">
         {/* Hidden input */}
