@@ -11,6 +11,7 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FaXmark } from "react-icons/fa6";
 import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
 import { faToggleOff } from "@fortawesome/free-solid-svg-icons";
+import RClogo  from'../asset/redcloud-logo.png'
 import ChatRequest from "../Components/Chat/ChatRequest";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -69,8 +70,9 @@ const Chat = () => {
     <div className=" container">
       <div className="sidebar">
         <div className="side-head">
-          <h3>RC-Ai</h3>
-          <div className="side-icon">
+<img src={RClogo} alt="RedCloud Logo" width="50px" height="30px" />
+
+          <div className="side-icon">{}
             <FaXmark />
             <FontAwesomeIcon icon={faBars} size="lg" />
           </div>
