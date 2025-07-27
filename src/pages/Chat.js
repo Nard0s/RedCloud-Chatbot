@@ -70,7 +70,7 @@ const Chat = () => {
     <div className=" container">
       <div className="sidebar">
         <div className="side-head">
-<img src={RClogo} alt="RedCloud Logo" width="50px" height="30px" />
+<img src={RClogo} alt="RedCloud Logo" width="60px" height="30px" />
 
           <div className="side-icon">{}
             <FaXmark />
