@@ -4,7 +4,7 @@ import "./Styles/MessageList.css";
 import ChatMessage from "./ChatMessage";
 import ChatRequest from "./ChatRequest";
 
-const MessageList = ({ messages }) => {
+const MessageList = ({ messages = [] }) => {
   return (
 
     <div className="continuer">
