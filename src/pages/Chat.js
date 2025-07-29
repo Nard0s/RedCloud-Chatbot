@@ -2,16 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Styles/Chat.css";
 import "../Components/Themes/Theme.css";
 import MessageList from "../Components/Chat/MessageList";
-import ChatHistory from "../Components/Chat/ChatHistory";
 import MessageInput from "../Components/Chat/MessageInput";
-import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { FaXmark, FaBars } from "react-icons/fa6";
-import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
-import { faToggleOff } from "@fortawesome/free-solid-svg-icons";
 import RClogo  from'../asset/redcloud-logo.png'
-import ChatRequest from "../Components/Chat/ChatRequest";
-import Button from '../Components/Shared/Button'
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Sidebar from '../Components/Chat/Sidebar.js'
 
@@ -102,7 +94,7 @@ const Chat = () => {
           <MessageList messages={messages} />
         </div>
 
-        <div className="ChatMessageInput">
+        <div className="messageInput">
           <MessageInput
             handleSendBtnClick={handleSendBtnClick}
             handleOnChange={handleOnChange}
@@ -110,7 +102,8 @@ const Chat = () => {
           />
         </div>
         {/* ...........................footer........................ */}
-        <div className="footer"> footer</div>
+        <div className="footer">&copy; 2025 Red Cloud. All rights reserved.
+</div>
       </div>
     </div>
   );

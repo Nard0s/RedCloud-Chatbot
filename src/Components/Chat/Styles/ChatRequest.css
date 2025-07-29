@@ -28,9 +28,18 @@ body {
     background-color:var(--light-primary-red);
   }
 }
+/* .........................tablet................................ */
+@media (min-width: 600px)and (max-width:960px)  {
+  .request{
+    max-width: 100%;
+    background-color: aqua;
+  }
+}
 
+/* ...............................phone........................................... */
 @media (max-width: 600px) {
   .request{
-    width: 100%;
+    max-width: 100%;
+    background-color: blueviolet;
   }
 }

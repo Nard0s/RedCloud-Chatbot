@@ -9,28 +9,52 @@ import '../Themes/Theme.css'
 
 const MessageInput = ({handleSendBtnClick, handleOnChange, tempTxt}) => {
   return (
-    <div className="message-input">
-      
-      <InputField placeholder='Ask Anything' type='text' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
+    <div>
+        <div className="message-input">
+          
+          <InputField placeholder='Ask Anything' type='text' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
 
-      <div className="icons">
-        {/* Hidden input */}
-        <input
-          type="file"
-          style={{ display: 'none' }}
-          onChange={(e)=>console.log(e.target.files)}
-        />
+          <div className="icons">
+            {/* Hidden input */}
+            <input
+              type="file"
+              style={{ display: 'none' }}
+              onChange={(e)=>console.log(e.target.files)}
+            />
 
-        {/* Upload + Send Icons */}
-        <FontAwesomeIcon
-          icon={faPlus}
-          className="upload-icon"
-          // onClick={handleIconClick}
-        />
-        <div  className="send-icon" onClick={handleSendBtnClick}>
-          <FontAwesomeIcon icon={faArrowUp} />
+            {/* Upload + Send Icons */}
+            <FontAwesomeIcon
+              icon={faPlus}
+              className="upload-icon"
+              // onClick={handleIconClick}
+            />
+            <div  className="send-icon" onClick={handleSendBtnClick}>
+              <FontAwesomeIcon icon={faArrowUp} />
+            </div>
+          </div>
         </div>
-      </div>
+
+
+        <div className="message-input-small">
+           <div className="small-message-input">
+            {/* Upload + Send Icons */}
+            <div className='upload-icon-small'>
+              <FontAwesomeIcon
+              icon={faPlus}
+              className="upload-icon"
+              // onClick={handleIconClick}
+            />
+            </div>
+            
+            <div className='smallInput'>
+              <InputField placeholder='Ask Anything' type='text' width='100%' handleOnChange={handleOnChange} tempTxt={tempTxt} />
+
+              <div  className="send-icon" onClick={handleSendBtnClick}>
+                <FontAwesomeIcon icon={faArrowUp} />
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   );
 };
