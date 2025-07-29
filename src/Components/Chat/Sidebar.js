@@ -7,7 +7,7 @@ import { FaXmark, FaBars } from "react-icons/fa6";
 import ChatHistory from './ChatHistory.js'
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-const Sidebar = () => {
+const Sidebar = ({chatList, handleChatOpen}) => {
   return (
    <div className="sidebar">
         <div className="side-head">
@@ -26,7 +26,9 @@ const Sidebar = () => {
         <hr></hr>
         {/* ..............................Chat History................................ */}
         <div className="chatHistory">
-          <ChatHistory />
+          {chatList.map((chat, key) => {
+            return <ChatHistory key={key} chat={chat} handleChatOpen={handleChatOpen} />
+          })}
         </div>
         {/* .......................Logout............................... */}
         <div className="logout">
