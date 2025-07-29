@@ -11,12 +11,12 @@ const Sidebar = ({chatList, handleChatOpen}) => {
   return (
    <div className="sidebar">
         <div className="side-head">
-      <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" />
+      <img src={RClogo} alt="RedCloud Logo" width="60px" height="30px" />
 
-          <div className="side-icon">{}
+          {/* <div className="side-icon">{}
             <FaXmark />
             <FaBars />
-          </div>
+          </div> */}
         </div>
 
         {/* <hr></hr> */}
