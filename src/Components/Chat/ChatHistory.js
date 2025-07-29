@@ -7,7 +7,7 @@ import './Styles/ChatHistory.css';
 
 const ChatHistory = ({chat, handleChatOpen}) => {
   const [showMenu, setShowMenu] = useState(false);
-3
+
   return (
     <div 
       className='chatHistory-item' 
