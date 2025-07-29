@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     /* border: solid 1px rgb(232, 232, 232); */
-    width: 55%;
+    width: 100%;
     border-radius: 1.5rem;
     padding: 10px 13px;
     height: 6rem;  
@@ -34,7 +34,9 @@
 InputField{
    box-sizing: border-box;
 }
-
+@media (max-width: 600px) {
+  
+}
 @media (prefers-color-scheme: light) {
   .message-input {
     background:var(--main-light);
@@ -49,7 +51,7 @@ InputField{
   .message-input {
      background:var( --tertiary-dark);
      /* border:0.5px solid var(--tertiary-light); */
-;
+
   }
   .send-icon{
      background-color: var(--tertiary-light);

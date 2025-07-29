@@ -1,10 +1,18 @@
 import React from 'react'
 import './Styles/Button.css'
-const Button = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+const Button = ({text,iconType}) => {
   return (
-    <div>
-      
-    </div>
+    <>
+        <div className="new-chat-btn">
+          <FontAwesomeIcon
+            icon={iconType}
+            style={{ marginRight: "8px" }}
+          />
+          <h3 className='btn-text'>{text} </h3>
+        </div>
+    </>
   )
 }
 

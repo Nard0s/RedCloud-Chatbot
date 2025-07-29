@@ -4,36 +4,33 @@
     margin: 0;
 }
 .continuer{
+
     display: flex;
-    /* width: 15rem; */
     flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
     position: relative;
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+
   
 }
 .chat{
     width: 100%;
-    /* align-self: center; */
     display: flex;
     flex-direction: column;
-    padding: 0 60px;
 }
 .request {
   align-self: flex-end;
   width: auto;
-  max-width: 60%; 
+  max-width: 100%; 
+  overflow:auto;
 }
 
-.response{
-    align-self: start;
-    width: 80%;
-}
-.messageInput{
-    position: absolute;
-    justify-content: end;
-    align-self: center;
-    bottom: 20px;
-    z-index: 10;
+@media (max-width: 600px) {
+  .response{
+    width: 100%;
+  }
+  .continuer{
+    padding-left: 0%;
+    padding-right: 0%;
+  }
 }

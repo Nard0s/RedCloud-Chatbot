@@ -4,16 +4,16 @@ import "../Components/Themes/Theme.css";
 import MessageList from "../Components/Chat/MessageList";
 import ChatHistory from "../Components/Chat/ChatHistory";
 import MessageInput from "../Components/Chat/MessageInput";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { FaXmark } from "react-icons/fa6";
+import { FaXmark, FaBars } from "react-icons/fa6";
 import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
 import { faToggleOff } from "@fortawesome/free-solid-svg-icons";
 import RClogo  from'../asset/redcloud-logo.png'
 import ChatRequest from "../Components/Chat/ChatRequest";
+import Button from '../Components/Shared/Button'
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import Sidebar from '../Components/Chat/Sidebar.js'
 
 const Chat = () => {
   const [tempTxt, setTempTxt] = useState("");
@@ -41,6 +41,24 @@ const Chat = () => {
           },
         ],
       },
+
+      {
+        role: "user",
+        parts: [
+          {
+            text: "give me simple code",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Okay, Pitter! Do you want a super-duper simple code? Like a secret way to write things that only we know?Here s a fun one! It s called the Happy Letter Code !It s very easy!Every time you see a smiley face 😊, it means the letter A!Every time you see a star ⭐, it means the letter B!Every time you see a heart ❤️, it means the letter C!So, if I write:😊 ⭐What do you think that says, Pitter? Can you figure out our secret message?",
+          },
+        ],
+      },
+      
     ],
   };
 
@@ -64,53 +82,27 @@ const Chat = () => {
 
     setMessages((prev) => [...prev, newUserMessage, newBotMessage]);
     setTempTxt("");
+
+
+    // ==============================================sidebar=============================
+
   };
 
   return (
     <div className=" container">
-      <div className="sidebar">
-        <div className="side-head">
-<img src={RClogo} alt="RedCloud Logo" width="60px" height="30px" />
-
-          <div className="side-icon">{}
-            <FaXmark />
-            <FontAwesomeIcon icon={faBars} size="lg" />
-          </div>
-        </div>
-
-        {/* <hr></hr> */}
-
-        {/* ..............................New Chat................................ */}
-        <div className="new-chat-btn">
-          <FontAwesomeIcon
-            icon={faPenToSquare}
-            style={{ marginRight: "8px" }}
-          />
-          <h3>New Chat</h3>
-        </div>
-
-        <hr></hr>
-
-        <div className="chatHistory">
-          <ChatHistory />
-        </div>
-        {/* .......................Logout............................... */}
-
-        <div className="logout">
-          <FontAwesomeIcon icon={faRightFromBracket} />
-          <h3>Logout</h3>
-        </div>
+      {/* =====================================sidebar===================================== */}
+      <div className="ChatSidebar">
+        <Sidebar/>
       </div>
-
-      {/* ..................................Main.................................... */}
+      {/* =====================================Main=============================================== */}
       <div className="main">
-        <div className="header"></div>
+        <div className="header"><img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" /></div>
 
         <div className="messageList">
           <MessageList messages={messages} />
         </div>
 
-        <div className="messageInput">
+        <div className="ChatMessageInput">
           <MessageInput
             handleSendBtnClick={handleSendBtnClick}
             handleOnChange={handleOnChange}
