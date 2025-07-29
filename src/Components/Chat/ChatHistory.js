@@ -5,7 +5,7 @@ import '../Themes/Theme.css';
 import './Styles/ChatHistory.css';
 
 
-const ChatHistory = () => {
+const ChatHistory = ({chat, handleChatOpen}) => {
   const [showMenu, setShowMenu] = useState(false);
 3
   return (
@@ -14,7 +14,7 @@ const ChatHistory = () => {
       onMouseLeave={() => setShowMenu(false)}
     >
       
-      <p>which is incorrect</p>
+      <p onClick={() => {handleChatOpen(chat.chat_id)}} >{chat.title}</p>
 
       <div 
         className="more-icon" 
