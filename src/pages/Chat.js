@@ -60,7 +60,7 @@ const Chat = () => {
       {/* =====================================Main=============================================== */}
       <div className="main">
         <div className="header">
-          <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" />
+          {/* <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" /> */}
         </div>
 
         <div className="messageList">
