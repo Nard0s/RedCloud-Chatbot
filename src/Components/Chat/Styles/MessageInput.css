@@ -25,8 +25,8 @@
    display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 2.5rem;
+  height: 2rem;
   border-radius: 50%;
   color: var(--dark);
   background-color:var(--text-primary) ;             
@@ -73,11 +73,6 @@ InputField{
   }
 }
 
-
-
-@media (max-width: 601px) {
-   
-}
 @media (min-width: 600px)and (max-width:960px) {
    .message-input{
     display: block;
@@ -89,6 +84,10 @@ InputField{
   .message-input {
     display: none;
   } 
+
+   .send-icon{
+    height:2.5rem;
+   }
   .message-input-small{
     display:block; 
     width: 100%;
@@ -97,12 +96,12 @@ InputField{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
-     width: 100%;
-     height: 2rem;
-     z-index: 100;
-    }
-    .smallInput{
+    gap: 5px;
+    width: 100%;
+    height: 2.5rem;
+    z-index: 100;
+  }
+  .smallInput{
     flex-basis: 90%;
     border-radius: 1rem;
     /* padding: 10px 13px; */
@@ -111,14 +110,14 @@ InputField{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    height: 2.5rem;
   }
   .upload-icon-small{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   padding: 15px;
   color:white;

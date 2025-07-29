@@ -17,8 +17,8 @@ const MessageInput = ({ handleSendBtnClick, handleOnChange, tempTxt }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      console.log("📎 File selected:", file);
-      // You can add logic here to upload, preview, etc.
+      console.log("File selected:", file);
+      
     }
   };
 
