@@ -10,8 +10,8 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Logging in with:', email, password);
-    // Add your login logic here
   };
+
 
   return (
     <div className="login-container">
@@ -34,6 +34,7 @@ const LoginForm = () => {
           required
         />
         <button type="submit" className="login-button">Log In</button>
+        <p>If u did't have account <spam>Create account</spam></p>
       </form>
     </div>
   );

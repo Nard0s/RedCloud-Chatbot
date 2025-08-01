@@ -6,10 +6,12 @@ import InputField from '../Components/Shared/InputField.js'
 import Chat from '../pages/Chat.js'
 import Button from '../Components/Shared/Button.js'
 // import LoginForm from '../Components/Auth/LoginForm.js'
+import RegisterForm from '../Components/Auth/RegisterForm.js'
 const AppRouter = () => {
   return (
     <div>
       {/* <LoginForm/> */}
+      {/* <RegisterForm/> */}
      <Chat/>
      {/* <Button/> */}
 

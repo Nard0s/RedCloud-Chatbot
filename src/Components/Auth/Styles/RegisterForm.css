@@ -9,10 +9,7 @@ body {
 spam{
     color: var(--primary-red);
 }
-p spam:active{
-    color: var(--primary-red);
-    font-weight: bold;
-}
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -45,7 +42,7 @@ p spam:active{
   font-size: 1rem;
 }
 .login-input:focus {
-  border: 2px solid var(--primary-red); 
+    border: 2px solid var(--primary-red); 
 }
 .login-button {
   width: 100%;
