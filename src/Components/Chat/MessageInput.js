@@ -28,7 +28,7 @@ const MessageInput = ({ handleSendBtnClick, handleOnChange, tempTxt }) => {
       <div className="message-input">
         <InputField
           placeholder="Ask Anything"
-          type="text"
+          type="message"
           width="100%"
           handleOnChange={handleOnChange}
           tempTxt={tempTxt}

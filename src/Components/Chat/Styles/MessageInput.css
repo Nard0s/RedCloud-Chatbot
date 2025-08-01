@@ -54,6 +54,13 @@ InputField{
   .icons{
     color: var( --main-dark);
   }
+   .upload-icon-small{
+    color: var(--dark);
+    background-color: var(--secondary-light);
+   }
+   .smallInput{
+    border: solid 1px rgb(161, 161, 161);
+   }
 }
 @media (prefers-color-scheme: dark) {
   .message-input {
@@ -71,6 +78,13 @@ InputField{
   .icons{
     color: white;
   }
+  .upload-icon-small{
+   color:white;
+  background:var( --tertiary-dark);
+   }
+    .smallInput{
+       background:var( --tertiary-dark);
+    }
 }
 
 @media (min-width: 600px)and (max-width:960px) {
@@ -103,10 +117,8 @@ InputField{
   }
   .smallInput{
     flex-basis: 90%;
-    border-radius: 1rem;
+    border-radius: 2rem;
     /* padding: 10px 13px; */
-    background:var( --tertiary-dark);
-    /* border: solid 1px rgb(232, 232, 232); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,7 +132,6 @@ InputField{
   height: 2.5rem;
   border-radius: 50%;
   padding: 15px;
-  color:white;
-  background:var( --tertiary-dark);
+ 
   }
 }

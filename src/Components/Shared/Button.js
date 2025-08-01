@@ -8,9 +8,9 @@ const Button = ({text,iconType}) => {
         <div className="new-chat-btn">
           <FontAwesomeIcon
             icon={iconType}
-            style={{ marginRight: "8px" }}
+            style={{ marginRight: "" }}
           />
-          <h3 className='btn-text'>{text} </h3>
+          <h3 className='btn-text'> {text} </h3>
         </div>
     </>
   )

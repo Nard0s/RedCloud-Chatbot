@@ -11,8 +11,8 @@ const AppRouter = () => {
   return (
     <div>
       {/* <LoginForm/> */}
-      {/* <RegisterForm/> */}
-     <Chat/>
+      <RegisterForm/>
+     {/* <Chat/> */}
      {/* <Button/> */}
 
      </div>
