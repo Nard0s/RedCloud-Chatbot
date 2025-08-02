@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../Themes/Theme.css'
 import './Styles/LoginForm.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -9,12 +10,14 @@ const LoginForm = () => {
   const [name, setName] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
-  const [action, setAction] = useState('Sign up');
+  const [action, setAction] = useState('Log in');
   // const [action, setAction] = useState('Log in');
+    const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Logging in with:', email, password);
+    navigate('/chat');
   };
 
 
@@ -51,7 +54,7 @@ const LoginForm = () => {
               required
             />
             <button type="submit" className="login-button">Sign up</button>
-            <p>Already have an account  <a onClick={()=>{setAction("Log in")}}> <spam>Sign in</spam></a></p>
+            <p>Already have an account?  <a onClick={()=>{setAction("Log in")}}> <spam>Log in</spam></a></p>
         </div>}
 
           {/* ====================================== Login =============================== */}
