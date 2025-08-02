@@ -7,9 +7,12 @@ body {
 }
 
 spam{
-    color: var(--primary-orange);
+    color: var(--primary-red);
 }
-
+p spam:active{
+    color: var(--primary-red);
+    font-weight: bold;
+}
 .login-container {
   display: flex;
   justify-content: center;
@@ -23,7 +26,7 @@ spam{
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 0 20px rgba(85, 85, 85, 0.167);
+  box-shadow: 0 0 2px rgba(85, 85, 85, 0.167);
 }
 
 .login-title {
@@ -37,22 +40,25 @@ spam{
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--tertiary-orange);
+  border: 1px solid var(--secondary-red);
   border-radius: 6px;
   font-size: 1rem;
 }
-
+.login-input:focus {
+  border: 2px solid var(--primary-red); 
+}
 .login-button {
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--primary-orange);
+  background-color: var(--primary-red);
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
+  font-weight: bolder;
   cursor: pointer;
 }
 
 .login-button:hover {
-  background-color: var(--tertiary-orange);
+  background-color: var(--secondary-red);
 }

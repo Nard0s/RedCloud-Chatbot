@@ -3,7 +3,7 @@ import "./Styles/Chat.css";
 import "../Components/Themes/Theme.css";
 import MessageList from "../Components/Chat/MessageList";
 import MessageInput from "../Components/Chat/MessageInput";
-
+import { FaXmark, FaBars } from "react-icons/fa6";
 import RClogo  from'../asset/redcloud-logo.png'
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -59,8 +59,19 @@ const Chat = () => {
       </div>
       {/* =====================================Main=============================================== */}
       <div className="main">
-        <div className="header">
-          {/* <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" /> */}
+        {/* <div className="header">
+          <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" className="header-logo" />
+          <hr/>
+        </div> */}
+
+        <div className="header-small-screen">
+          <div className="sidebar-icons">
+            <FaBars />
+            {/* <FaXmark /> */}
+          </div>
+           
+          <img src={RClogo} alt="RedCloud Logo" width="70px" height="40px" className="header-logo" />
+          <hr/>
         </div>
 
         <div className="messageList">
@@ -75,8 +86,7 @@ const Chat = () => {
           />
         </div>
         {/* ...........................footer........................ */}
-        <div className="footer">&copy; 2025 Red Cloud. All rights reserved.
-</div>
+        <div className="footer">&copy; 2025 Red Cloud. All rights reserved.</div>
       </div>
     </div>
   );

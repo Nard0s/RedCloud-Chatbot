@@ -32,7 +32,6 @@ body {
 @media (min-width: 600px)and (max-width:960px)  {
   .request{
     max-width: 100%;
-    background-color: aqua;
   }
 }
 
@@ -40,6 +39,5 @@ body {
 @media (max-width: 600px) {
   .request{
     max-width: 100%;
-    background-color: blueviolet;
   }
 }

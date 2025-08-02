@@ -62,10 +62,21 @@
     color: var(--main-dark);
   }
   .chatHistory-item:hover {
-  background-color: rgb(223, 223, 223);
-  /* box-shadow:5px 2px 5px  #85848465; */
+    background-color: rgb(223, 223, 223);
+    /* box-shadow:5px 2px 5px  #85848465; */
+  }
+  .more-icon:hover{
+    color: var(--main-dark);
+  }
 }
-.more-icon:hover{
-  color: var(--main-dark);
+
+@media (min-width: 600px)and (max-width:960px){
+    .chatHistory-item{
+      display: none;
+    }
 }
+@media (max-width: 601px){
+    .chatHistory-item{
+      display: none;
+    }
 }

@@ -22,7 +22,9 @@ const Sidebar = ({chatList, handleChatOpen}) => {
         {/* <hr></hr> */}
 
         {/* ..............................New Chat................................ */}
+        <div className='newChat'>
         <Button text='New Chat' iconType={faPenToSquare}/>
+        </div>
         <hr></hr>
         {/* ..............................Chat History................................ */}
         <div className="chatHistory">

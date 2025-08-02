@@ -25,7 +25,7 @@
     .sidebar{
         background:rgb(254, 253, 253);
         box-shadow: 0px 5px 5px rgba(156, 155, 155, 0.262);
-         border: 3px solid rgb(11, 249, 206);
+         /* border: 3px solid rgb(11, 249, 206); */
         /* border: 1px solid var( --secondary-light); */
         color: var(--main-dark);
     }
@@ -38,4 +38,12 @@
     .logout{
         background-color: rgb(227, 228, 228);
     }
+}
+@media (min-width: 600px)and (max-width:960px){
+  .side-head img{
+    display: none;
+  }
+  .newChat text{
+    display: none;
+  }
 }
