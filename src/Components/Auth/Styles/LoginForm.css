@@ -8,6 +8,7 @@ body {
 
 spam{
     color: var(--primary-red);
+    cursor: pointer;
 }
 p spam:active{
     color: var(--primary-red);
@@ -61,4 +62,7 @@ p spam:active{
 
 .login-button:hover {
   background-color: var(--secondary-red);
+}
+.login-button:active{
+   background-color: var(--primary-red);
 }

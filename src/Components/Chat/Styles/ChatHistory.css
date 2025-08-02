@@ -70,7 +70,7 @@
   }
 }
 
-@media (min-width: 600px)and (max-width:960px){
+/* @media (min-width: 600px)and (max-width:960px){
     .chatHistory-item{
       display: none;
     }
@@ -79,4 +79,4 @@
     .chatHistory-item{
       display: none;
     }
-}
+} */

@@ -4,8 +4,7 @@ import "../Components/Themes/Theme.css";
 import MessageList from "../Components/Chat/MessageList";
 import MessageInput from "../Components/Chat/MessageInput";
 import { FaXmark, FaBars } from "react-icons/fa6";
-import RClogo  from'../asset/redcloud-logo.png'
-
+import RClogo from '../asset/redcloud-logo.png';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Sidebar from "../Components/Chat/Sidebar.js";
 
@@ -15,11 +14,11 @@ const Chat = () => {
   const ai = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
   const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
   const [chats, setChats] = useState([]);
-  const [chat, setChat] = useState({}); // Single chat history from chats
-  // Note: it is not the state variable "messages",
-  // "messages" would get its data from this "chat"
+  const [chat, setChat] = useState({});
+  const [sidebarOpen, setSidebarOpen] = useState(true); 
+  const [isCollapsed, setIsCollapsed] = useState(false); 
 
-  let data = require("../db/chat.json").user_id_1; // all user chats fetched from the server
+  let data = require("../db/chat.json").user_id_1;
 
   const handleOnChange = (e) => {
     setTempTxt(e.target.value);
@@ -47,31 +46,34 @@ const Chat = () => {
 
     setMessages((prev) => [...prev, newUserMessage, newBotMessage]);
     setTempTxt("");
-
-    // ==============================================sidebar=============================
   };
 
   return (
-    <div className=" container">
-      {/* =====================================sidebar===================================== */}
-      <div className="ChatSidebar">
-        <Sidebar chatList={chats} handleChatOpen={handleChatOpen} />
+    <div className="container">
+      <div className='header'></div>
+      {/* ===== Sidebar ===== */}
+      <div className={`ChatSidebar `}>
+        <Sidebar chatList={chats} handleChatOpen={handleChatOpen} isCollapsed ={isCollapsed} setIsCollapsed={setIsCollapsed} />
       </div>
-      {/* =====================================Main=============================================== */}
-      <div className="main">
-        {/* <div className="header">
-          <img src={RClogo} alt="RedCloud Logo" width="30px" height="30px" className="header-logo" />
-          <hr/>
-        </div> */}
 
+      {/* ===== Main ===== */}
+      <div className="main">
         <div className="header-small-screen">
           <div className="sidebar-icons">
-            <FaBars />
-            {/* <FaXmark /> */}
+            {sidebarOpen ? (
+              <FaXmark onClick={() => setSidebarOpen(false)} className="icon" />
+            ) : (
+              <FaBars onClick={() => setSidebarOpen(true)} className="icon" />
+            )}
           </div>
-           
-          <img src={RClogo} alt="RedCloud Logo" width="70px" height="40px" className="header-logo" />
-          <hr/>
+          <img
+            src={RClogo}
+            alt="RedCloud Logo"
+            width="70px"
+            height="40px"
+            className="header-logo"
+          />
+          <hr />
         </div>
 
         <div className="messageList">
@@ -85,7 +87,7 @@ const Chat = () => {
             tempTxt={tempTxt}
           />
         </div>
-        {/* ...........................footer........................ */}
+
         <div className="footer">&copy; 2025 Red Cloud. All rights reserved.</div>
       </div>
     </div>
